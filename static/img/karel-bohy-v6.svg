@@ -1,0 +1,44 @@
+<svg width="680" height="184" viewBox="0 14 680 184" xmlns="http://www.w3.org/2000/svg">
+  <title>Logo Karel Bohy – Een Nieuwe Horizon</title>
+  <desc>Spiritueel logo Karel Bohy voor website header</desc>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap');
+      .naam { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 62px; font-weight: 600; fill: #5a3e2b; letter-spacing: 4px; }
+      .sub  { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 25px; font-weight: 600; fill: #5a3e2b; letter-spacing: 4px; }
+    </style>
+  </defs>
+
+  <!-- Zon boven naam -->
+  <g transform="translate(340, 44)">
+    <line x1="0" y1="-20" x2="0" y2="-30" stroke="#c49a6c" stroke-width="2.2" fill="none"/>
+    <line x1="14" y1="-14" x2="21" y2="-21" stroke="#c49a6c" stroke-width="2.2" fill="none"/>
+    <line x1="20" y1="0" x2="30" y2="0" stroke="#c49a6c" stroke-width="2.2" fill="none"/>
+    <line x1="14" y1="14" x2="21" y2="21" stroke="#c49a6c" stroke-width="2.2" fill="none"/>
+    <line x1="0" y1="20" x2="0" y2="30" stroke="#c49a6c" stroke-width="2.2" fill="none"/>
+    <line x1="-14" y1="14" x2="-21" y2="21" stroke="#c49a6c" stroke-width="2.2" fill="none"/>
+    <line x1="-20" y1="0" x2="-30" y2="0" stroke="#c49a6c" stroke-width="2.2" fill="none"/>
+    <line x1="-14" y1="-14" x2="-21" y2="-21" stroke="#c49a6c" stroke-width="2.2" fill="none"/>
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#c49a6c" stroke-width="2.2"/>
+    <circle cx="0" cy="0" r="4" fill="#c49a6c"/>
+  </g>
+
+  <!-- Horizontale lijnen -->
+  <line x1="60" y1="112" x2="218" y2="112" stroke="#c49a6c" stroke-width="2" fill="none"/>
+  <circle cx="60" cy="112" r="4.5" fill="#c49a6c"/>
+  <circle cx="139" cy="112" r="2.5" fill="#c49a6c" opacity="0.6"/>
+
+  <line x1="462" y1="112" x2="620" y2="112" stroke="#c49a6c" stroke-width="2" fill="none"/>
+  <circle cx="620" cy="112" r="4.5" fill="#c49a6c"/>
+  <circle cx="541" cy="112" r="2.5" fill="#c49a6c" opacity="0.6"/>
+
+  <!-- Naam -->
+  <text x="340" y="132" text-anchor="middle" class="naam">Karel Bohy</text>
+
+  <!-- Sierlijntje -->
+  <line x1="240" y1="152" x2="440" y2="152" stroke="#c49a6c" stroke-width="1.5" stroke-dasharray="3 5" fill="none"/>
+
+  <!-- Subtitel -->
+  <text x="340" y="187" text-anchor="middle" class="sub">een nieuwe horizon</text>
+
+</svg>

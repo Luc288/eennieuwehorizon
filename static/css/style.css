@@ -55,12 +55,23 @@ h1, h2, h3, h4, h5 {
   color: var(--color-primary-dark);
 }
 
+#mainNav .navbar-logo {
+  height: 64px;
+  width: auto;
+  display: block;
+  transition: height 0.3s ease;
+}
+
+#mainNav.scrolled .navbar-logo {
+  height: 52px;
+}
+
 #mainNav .nav-link {
   color: var(--color-text);
-  font-weight: 400;
-  font-size: 0.95rem;
+  font-weight: 500;
+  font-size: 1.15rem;
   letter-spacing: 0.04em;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.15rem;
   transition: color 0.2s;
 }
 
