@@ -1,0 +1,14 @@
+baseURL = "https://www.eennieuwehorizon.nl/"
+locale = "nl-nl"
+title = "Een Nieuwe Horizon – Karel Bohy"
+# Statische one-pager: geen secties/lijsten nodig
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  author = "Karel Bohy"
+  description = "Een Nieuwe Horizon – een boek over leven, zin en betekenis door Karel Bohy."
+  prijs = "€ 12,50"
+  authorImage = "/img/foto-karel.jpg"
+
+[markup.goldmark.renderer]
+  unsafe = true

@@ -1,0 +1,209 @@
+{{ define "main" }}
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#intro">Een Nieuwe Horizon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#intro">Intro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#waarover">Waarover gaat het</a></li>
+          <li class="nav-item"><a class="nav-link" href="#het-boek">Het boek</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / INTRO -->
+  <section id="intro" class="hero-section d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7">
+          <p class="overline text-uppercase letter-spacing mb-3">{{ .Site.Params.author }} · 2026</p>
+          <h1 class="display-4 fw-bold lh-sm mb-4">
+            De onzichtbare kant van<br />
+            <em>ons bestaan</em>
+          </h1>
+          <p class="lead mb-4">
+            Dit boek laat ons als het ware achter de schermen van het toneel des levens kijken,
+            waar we de échte zin en betekenis van alles mogen ontdekken.
+            En dat heeft grote gevolgen voor ons leven. <strong>Alles verandert erdoor.</strong>
+          </p>
+          <a href="#het-boek" class="btn btn-primary btn-lg px-5 py-3">
+            Bestel het boek &mdash; {{ .Site.Params.prijs }}
+          </a>
+        </div>
+        <div class="col-lg-5 text-center">
+          <div class="author-img-wrap mx-auto">
+            <img src="{{ .Site.Params.authorImage | relURL }}"
+                 onerror="this.src='https://placehold.co/420x520/d4c5a9/6b5c45?text=Karel+Bohy'"
+                 alt="Karel Bohy" class="img-fluid rounded-4 shadow" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAROVER GAAT HET -->
+  <section id="waarover" class="section-light py-6">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title mb-4">Waarover gaat het?</h2>
+          <div class="divider mx-auto mb-5"></div>
+        </div>
+      </div>
+      <div class="row gy-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 text-center">
+            <div class="feature-icon mb-3">&#9728;</div>
+            <h5 class="fw-bold mb-2">Achter de schermen</h5>
+            <p class="text-muted">
+              Het boek onthult wat er verborgen ligt achter het zichtbare. Niet als theorie,
+              maar als iets wat je kunt herkennen en voelen in het dagelijks leven.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 text-center">
+            <div class="feature-icon mb-3">&#10022;</div>
+            <h5 class="fw-bold mb-2">Zin en betekenis</h5>
+            <p class="text-muted">
+              Wat is de diepere betekenis van wat ons overkomt? Karel Bohy laat zien hoe alles
+              samenhangt en hoe je daarin je eigen plek kunt vinden.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card p-4 h-100 text-center">
+            <div class="feature-icon mb-3">&#9835;</div>
+            <h5 class="fw-bold mb-2">Alles verandert</h5>
+            <p class="text-muted">
+              Wie dit boek leest, kijkt anders naar zichzelf, naar anderen en naar het leven.
+              Het is een perspectief dat blijft.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HET BOEK -->
+  <section id="het-boek" class="section-warm py-6">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+          <h2 class="section-title mb-4">Het boek</h2>
+          <div class="divider mx-auto mb-4"></div>
+          <p class="lead text-muted">
+            <em>Een Nieuwe Horizon</em> is een boek dat je meeneemt naar een dieper begrip
+            van het leven. Geschreven vanuit persoonlijke ervaring en spiritueel inzicht.
+          </p>
+        </div>
+      </div>
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="book-cover-wrap text-center">
+            <div class="book-cover-placeholder rounded-4 shadow-lg mx-auto d-flex align-items-center justify-content-center">
+              <div>
+                <p class="fs-5 fw-bold text-white mb-1">Een Nieuwe Horizon</p>
+                <p class="text-white-50 small">Karel Bohy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h4 class="fw-bold mb-3">Over het boek</h4>
+          <p class="text-muted mb-3">
+            Wat als er achter de werkelijkheid die we zien, een rijkere wereld schuilgaat?
+            Een wereld vol betekenis, verbinding en richting? Dit boek neemt je mee op die
+            ontdekkingstocht — niet als fantasie, maar als iets wat echt is.
+          </p>
+          <p class="text-muted mb-4">
+            Karel Bohy schreef <em>Een Nieuwe Horizon</em> vanuit zijn eigen zoektocht naar
+            zingeving. Het resultaat is een toegankelijk, warm en diepgaand boek dat raakt.
+          </p>
+          <ul class="list-unstyled mb-4">
+            <li class="mb-2">&#10003;&nbsp; Geschreven in helder Nederlands</li>
+            <li class="mb-2">&#10003;&nbsp; Spiritueel maar niet zweverig</li>
+            <li class="mb-2">&#10003;&nbsp; Prijs: <strong>{{ .Site.Params.prijs }}</strong></li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-lg px-5">
+            Bestel het boek &mdash; {{ .Site.Params.prijs }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BANNER -->
+  <section class="quote-section py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <blockquote class="blockquote mb-0">
+            <p class="fs-3 fst-italic text-white">
+              "Alles verandert erdoor."
+            </p>
+            <footer class="blockquote-footer mt-2 text-white-50">Karel Bohy</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-light py-6">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-7 text-center">
+          <h2 class="section-title mb-4">Contact</h2>
+          <div class="divider mx-auto mb-4"></div>
+          <p class="text-muted">
+            Wil je het boek bestellen, heb je een vraag of wil je meer informatie?
+            Neem dan contact op via onderstaand formulier.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <!-- Statische hosting kan geen formulieren verwerken: stel action in op
+               een formulierdienst (bv. Formspree) of vervang door een mailto-link. -->
+          <form class="contact-form p-4 p-md-5 rounded-4 shadow-sm bg-white" action="https://formspree.io/f/your-id" method="POST">
+            <div class="mb-3">
+              <label for="naam" class="form-label fw-semibold">Naam</label>
+              <input type="text" name="naam" class="form-control form-control-lg" id="naam" placeholder="Uw naam" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">E-mailadres</label>
+              <input type="email" name="email" class="form-control form-control-lg" id="email" placeholder="uw@email.nl" required />
+            </div>
+            <div class="mb-3">
+              <label for="bericht" class="form-label fw-semibold">Bericht</label>
+              <textarea class="form-control form-control-lg" name="bericht" id="bericht" rows="5"
+                placeholder="Uw bericht of bestelling..." required></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg py-3">
+                Verstuur bericht
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-section py-4 text-center">
+    <div class="container">
+      <p class="mb-1 fw-semibold">Een Nieuwe Horizon</p>
+      <p class="text-muted small mb-0">&copy; {{ now.Year }} Karel Bohy &middot; Alle rechten voorbehouden</p>
+    </div>
+  </footer>
+
+{{ end }}
