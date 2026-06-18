@@ -1,0 +1,9 @@
+{
+  "name": "eennieuwehorizon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contactformulier-functie voor de website Een Nieuwe Horizon",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}

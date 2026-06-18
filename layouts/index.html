@@ -206,9 +206,7 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-lg-6">
-          <!-- Statische hosting kan geen formulieren verwerken: stel action in op
-               een formulierdienst (bv. Formspree) of vervang door een mailto-link. -->
-          <form class="contact-form p-4 p-md-5 rounded-4 shadow-sm bg-white" action="https://formspree.io/f/your-id" method="POST">
+          <form id="contactForm" class="contact-form p-4 p-md-5 rounded-4 shadow-sm bg-white" novalidate>
             <div class="mb-3">
               <label for="naam" class="form-label fw-semibold">Naam</label>
               <input type="text" name="naam" class="form-control form-control-lg" id="naam" placeholder="Uw naam" required />
@@ -222,11 +220,16 @@
               <textarea class="form-control form-control-lg" name="bericht" id="bericht" rows="5"
                 placeholder="Uw bericht of bestelling..." required></textarea>
             </div>
+            <!-- Honeypot tegen spam: blijft voor mensen verborgen -->
+            <div style="position:absolute;left:-5000px" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </div>
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary btn-lg py-3">
+              <button type="submit" class="btn btn-primary btn-lg py-3" id="contactSubmit">
                 Verstuur bericht
               </button>
             </div>
+            <p id="contactStatus" class="mt-3 mb-0 text-center" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
