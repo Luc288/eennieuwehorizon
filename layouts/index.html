@@ -224,6 +224,10 @@
             <div style="position:absolute;left:-5000px" aria-hidden="true">
               <input type="text" name="website" tabindex="-1" autocomplete="off" />
             </div>
+            {{ with .Site.Params.turnstileSiteKey }}
+            <!-- Cloudflare Turnstile: blokkeert bots -->
+            <div class="cf-turnstile mb-3" data-sitekey="{{ . }}"></div>
+            {{ end }}
             <div class="d-grid">
               <button type="submit" class="btn btn-primary btn-lg py-3" id="contactSubmit">
                 Verstuur bericht

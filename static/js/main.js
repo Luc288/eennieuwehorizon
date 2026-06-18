@@ -21,11 +21,15 @@ window.addEventListener('scroll', () => {
 // Contactformulier -> verstuurt naar de Netlify-functie
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
+  // Tijd-trap: onthoud wanneer de pagina laadde (bots versturen vrijwel direct)
+  const formLoadedAt = Date.now();
+
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const status = document.getElementById('contactStatus');
     const btn = document.getElementById('contactSubmit');
     const data = Object.fromEntries(new FormData(contactForm).entries());
+    data.elapsedMs = Date.now() - formLoadedAt;
 
     if (!data.naam || !data.email || !data.bericht) {
       status.textContent = 'Vul alle velden in.';
@@ -47,6 +51,7 @@ if (contactForm) {
       const result = await res.json().catch(() => ({}));
       if (res.ok && result.ok) {
         contactForm.reset();
+        if (window.turnstile) window.turnstile.reset();
         status.textContent = 'Bedankt! Je bericht is verstuurd.';
         status.style.color = 'var(--color-primary, #5c7a5c)';
       } else {
