@@ -142,12 +142,9 @@
       <div class="row align-items-center gy-5">
         <div class="col-lg-6">
           <div class="book-cover-wrap text-center">
-            <div class="book-cover-placeholder rounded-4 shadow-lg mx-auto d-flex align-items-center justify-content-center">
-              <div>
-                <p class="fs-5 fw-bold text-white mb-1">Een Nieuwe Horizon</p>
-                <p class="text-white-50 small">Karel Bohy</p>
-              </div>
-            </div>
+            <img src="{{ .Site.Params.bookCover | relURL }}"
+                 alt="Boekcover van Een Nieuwe Horizon door Karel Bohy"
+                 class="book-cover-img rounded-4 shadow-lg mx-auto img-fluid" />
           </div>
         </div>
         <div class="col-lg-6">

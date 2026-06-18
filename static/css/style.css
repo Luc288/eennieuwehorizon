@@ -191,6 +191,14 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto;
 }
 
+.book-cover-img {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* ===== QUOTE SECTION ===== */
 .quote-section {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, #2a4030 100%);

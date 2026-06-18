@@ -9,6 +9,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
   description = "Een Nieuwe Horizon – een boek over leven, zin en betekenis door Karel Bohy."
   prijs = "€ 12,50"
   authorImage = "/img/foto-karel.jpg"
+  bookCover = "/img/kaft-boek-hetonzichtbare.jpg"
   # Cloudflare Turnstile site key (publiek, mag in de code staan).
   # Plak hier de "Site Key" uit je Cloudflare Turnstile-widget.
   turnstileSiteKey = "0x4AAAAAADnNf40iAdi3fyqY"
