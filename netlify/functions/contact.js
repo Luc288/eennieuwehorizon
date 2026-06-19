@@ -15,7 +15,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ ok: false, error: "Ongeldige aanvraag." }) };
   }
 
-  const { naam, email, bericht, website, elapsedMs } = data;
+  const { naam, email, bericht, onderwerp, website, elapsedMs } = data;
   const turnstileToken = data["cf-turnstile-response"];
 
   // Honeypot: bots vullen het verborgen veld 'website' in -> stil negeren.
@@ -72,8 +72,8 @@ exports.handler = async (event) => {
       from: `"Website Een Nieuwe Horizon" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
       to: process.env.MAIL_TO || process.env.SMTP_USER,
       replyTo: `"${naam}" <${email}>`,
-      subject: `Nieuw bericht via de website van ${naam}`,
-      text: `Naam: ${naam}\nE-mail: ${email}\n\nBericht:\n${bericht}`,
+      subject: `${onderwerp || "Nieuw bericht"} — ${naam}`,
+      text: `Onderwerp: ${onderwerp || "(geen)"}\nNaam: ${naam}\nE-mail: ${email}\n\nBericht:\n${bericht}`,
     });
     return { statusCode: 200, body: JSON.stringify({ ok: true }) };
   } catch (err) {

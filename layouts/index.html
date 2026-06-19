@@ -219,6 +219,13 @@
               <input type="email" name="email" class="form-control form-control-lg" id="email" placeholder="uw@email.nl" required />
             </div>
             <div class="mb-3">
+              <label for="onderwerp" class="form-label fw-semibold">Onderwerp</label>
+              <select name="onderwerp" id="onderwerp" class="form-select form-select-lg" required>
+                <option value="Ik heb een vraag">Ik heb een vraag</option>
+                <option value="Ik bestel het boek">Ik bestel het boek</option>
+              </select>
+            </div>
+            <div class="mb-3">
               <label for="bericht" class="form-label fw-semibold">Bericht</label>
               <textarea class="form-control form-control-lg" name="bericht" id="bericht" rows="5"
                 placeholder="Uw bericht of bestelling..." required></textarea>
