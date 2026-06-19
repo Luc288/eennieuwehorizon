@@ -1,4 +1,4 @@
-baseURL = "https://www.eennieuwehorizon.nl/"
+baseURL = "https://eennieuwehorizon.nl/"
 locale = "nl-nl"
 title = "Een Nieuwe Horizon – Karel Bohy"
 # Statische one-pager: geen secties/lijsten nodig
