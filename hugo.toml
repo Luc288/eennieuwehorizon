@@ -1,8 +1,9 @@
 baseURL = "https://eennieuwehorizon.nl/"
 locale = "nl-nl"
 title = "Een Nieuwe Horizon – Karel Bohy"
-# Statische one-pager: geen secties/lijsten nodig
-disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+# Statische one-pager: geen secties/lijsten nodig (sitemap wel behouden voor Google)
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
 
 [params]
   author = "Karel Bohy"
