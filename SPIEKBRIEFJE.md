@@ -1,46 +1,59 @@
 # Spiekbriefje — Een Nieuwe Horizon (Hugo + Netlify)
 
 ## Waar werk ik?
-Projectmap: `C:\Users\lucve\SynologyDrive\IT\Python\eennieuwehorizon-hugo\`
+Projectmap: `C:\Users\lucve\SynologyDrive\IT\Hugo\eennieuwehorizon\`
 
 Bewerk meestal:
 - `layouts\index.html` — de secties/teksten van de homepage
 - `static\css\style.css` — kleuren, lettertypes, opmaak
-- `hugo.toml` — instellingen + params (prijs, auteur, ...)
+- `hugo.toml` — instellingen + params (prijs, auteur, afbeeldingen, Turnstile-sleutel)
 
 ---
 
 ## 1. Lokaal testen
 ```powershell
-cd "C:\Users\lucve\SynologyDrive\IT\Python\eennieuwehorizon-hugo"
+cd "C:\Users\lucve\SynologyDrive\IT\Hugo\eennieuwehorizon"
 hugo server
 ```
 Open daarna http://localhost:1313/ — wijzigingen verschijnen meteen.
 Stoppen: `Ctrl + C`.
 
 > Let op: het contactformulier werkt NIET lokaal (de Netlify-functie draait
-> alleen op de echte site). Test het formulier op het *.netlify.app-adres.
+> alleen op de echte site en Turnstile geeft op localhost een foutmelding).
+> Test het formulier op de echte site.
 
 ---
 
 ## 2. Publiceren naar Netlify
-```powershell
-git add -A
-git commit -m "Korte omschrijving van de wijziging"
-git push
-```
-Netlify bouwt automatisch (~1 min). Volg de voortgang onder **Deploys** in Netlify.
-Geen handmatige upload nodig — `git push` regelt alles.
+Dubbelklik op `publish.bat` (of start het met een omschrijving:
+`publish.bat "Korte omschrijving"`). Het script:
+1. bouwt de site ter controle (`hugo --minify`; bij een fout stopt het),
+2. zet de wijzigingen klaar, commit en pusht naar GitHub.
+
+Netlify bouwt daarna automatisch (~1 min). Volg de voortgang onder **Deploys**.
+
+Handmatig kan ook: `git add -A`, `git commit -m "..."`, `git push`.
+
+---
+
+## Afbeeldingen
+Alles in `static\` gaat 1-op-1 mee naar de site. Zet er dus alleen bestanden in
+die je echt gebruikt, zonder spaties in de naam, en niet te groot
+(boekcover ≈ 1000 px breed, `.webp`). Pas de bestandsnaam ook aan in `hugo.toml`
+(`authorImage`, `bookCover`, `logo`).
 
 ---
 
 ## Handig om te weten
-- **Live site:** https://illustrious-dasik-0770d8.netlify.app/
-  (of je nieuwe naam na "Change site name")
+- **Live site:** https://eennieuwehorizon.nl/
 - **Build faalt?** Kijk in Netlify onder **Deploys** → klik de rode deploy aan
   voor de foutmelding. Functiefouten staan onder **Logs → Functions → contact**.
-- **SMTP-instellingen** (mailserver) staan als environment variables in Netlify,
-  NIET in de code. Wachtwoord = `SMTP_PASS` (secret).
+- **Environment variables** staan in Netlify, NIET in de code
+  (Site settings → Environment variables):
+  `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` (secret), `SMTP_FROM`,
+  `MAIL_TO`, en `TURNSTILE_SECRET` (secret; de publieke sleutel staat in `hugo.toml`).
+- **Spam-bescherming formulier:** verborgen veld (honeypot), tijd-trap
+  (< 3 seconden = genegeerd) en Cloudflare Turnstile.
 
 ---
 

@@ -1,22 +1,32 @@
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('mainNav');
-  if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+// Navbar: uitklapmenu (vervangt bootstrap.bundle.js) + scroll-effecten
+const nav = document.getElementById('mainNav');
+const menu = document.getElementById('navMenu');
+const toggler = document.querySelector('.navbar-toggler');
 
-// Smooth active nav link highlighting
+if (menu && toggler) {
+  const setOpen = (open) => {
+    menu.classList.toggle('show', open);
+    toggler.setAttribute('aria-expanded', String(open));
+  };
+  toggler.addEventListener('click', () => setOpen(!menu.classList.contains('show')));
+  menu.addEventListener('click', (e) => {
+    if (e.target.closest('.nav-link')) setOpen(false);
+  });
+}
+
+// Navbar-achtergrond en actieve link bij scrollen
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 window.addEventListener('scroll', () => {
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
   let current = '';
   sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
   });
   navLinks.forEach(a => {
-    a.classList.remove('active');
-    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
   });
-});
+}, { passive: true });
 
 // Contactformulier -> verstuurt naar de Netlify-functie
 const contactForm = document.getElementById('contactForm');

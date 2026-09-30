@@ -32,6 +32,15 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ ok: false, error: "Vul alle velden in." }) };
   }
 
+  // Types, lengtes en e-mailformaat controleren (voorkomt misbruik van de mail-headers).
+  if ([naam, email, bericht].some((v) => typeof v !== "string")) {
+    return { statusCode: 400, body: JSON.stringify({ ok: false, error: "Ongeldige aanvraag." }) };
+  }
+  if (naam.length > 100 || email.length > 200 || bericht.length > 5000 ||
+      !/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(email) || /[\r\n<>"]/.test(naam)) {
+    return { statusCode: 400, body: JSON.stringify({ ok: false, error: "Controleer je naam en e-mailadres." }) };
+  }
+
   // Cloudflare Turnstile verifiëren (alleen als er een secret is ingesteld).
   if (process.env.TURNSTILE_SECRET) {
     if (!turnstileToken) {
